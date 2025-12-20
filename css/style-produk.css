@@ -1,0 +1,174 @@
+        :root {
+            --color-primary: #00BCD4; /* Biru Tosca Cerah */
+            --color-secondary: #009688; /* Hijau Tosca Gelap (untuk harga) */
+            --color-text-dark: #333;
+            --color-text-light: #fff;
+            --color-bg-light: #F8F8F8;
+            --color-accent-wa: #25D366; /* Warna WhatsApp */
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--color-bg-light);
+            /* Background gradient ringan di bagian atas untuk konsistensi */
+            background-image: linear-gradient(to bottom, var(--color-primary) 0%, #30A6BB 200px, var(--color-bg-light) 200px);
+        }
+
+        /* --- 2. NAVBAR (Sederhana) --- */
+        .header-2 {
+            background-color: var(--color-primary);
+            color: var(--color-text-light);
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .header-2 a {
+            color: var(--color-text-light);
+            text-decoration: none;
+            margin-right: 15px;
+            font-size: 1.2em;
+        }
+
+        .header-2 .h1 {
+            font-size: 1.1em;
+            margin: 0;
+            font-weight: 600;
+        }
+
+        /* --- 3. CONTAINER UTAMA --- */
+        .detail-container {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-wrap: wrap; /* Agar responsif */
+        }
+
+        /* --- 4. BAGIAN KIRI (GAMBAR) --- */
+        .image-gallery {
+            flex: 1 1 40%; /* Mengambil 40% lebar di layar besar */
+            min-width: 300px; /* Lebar minimum di layar kecil */
+            padding-right: 20px;
+        }
+
+        .main-image {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .thumbnail-container {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+            overflow-x: auto;
+            padding-bottom: 5px;
+        }
+
+        .thumbnail {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 5px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: border 0.3s;
+        }
+
+        .thumbnail.active {
+            border-color: var(--color-primary);
+        }
+
+        /* --- 5. BAGIAN KANAN (INFO PRODUK) --- */
+        .product-info-detail {
+            flex: 1 1 55%; /* Mengambil 55% lebar di layar besar */
+            padding-left: 20px;
+        }
+
+        .product-info-detail h2 {
+            font-size: 2em;
+            color: var(--color-text-dark);
+            margin-top: 0;
+            border-bottom: 2px solid #EEE;
+            padding-bottom: 10px;
+        }
+
+        .price-detail {
+            font-size: 2.5em;
+            font-weight: 700;
+            color: var(--color-secondary);
+            margin: 10px 0 20px 0;
+        }
+
+        /* --- 6. DETAIL PRODUK (DESKRIPSI) --- */
+        .detail-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 25px;
+        }
+
+        .detail-table th, .detail-table td {
+            text-align: left;
+            padding: 10px 0;
+            font-size: 0.95em;
+        }
+
+        .detail-table th {
+            font-weight: 600;
+            color: #555;
+            width: 120px;
+        }
+
+        .detail-table tr {
+            border-bottom: 1px dashed #EEE;
+        }
+
+        /* --- 7. TOMBOL CALL-TO-ACTION (WA) --- */
+        .btn-wa {
+            display: inline-flex;
+            align-items: center;
+            padding: 15px 30px;
+            background-color: var(--color-accent-wa);
+            color: var(--color-text-light);
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-weight: 700;
+            transition: background-color 0.3s;
+            box-shadow: 0 4px 10px rgba(37, 211, 102, 0.4);
+        }
+
+        .btn-wa:hover {
+            background-color: #1DA851;
+        }
+
+        .btn-wa i {
+            margin-right: 10px;
+        }
+
+        /* --- 8. MEDIA QUERIES (Responsif) --- */
+        @media (max-width: 768px) {
+            .detail-container {
+                flex-direction: column;
+                padding: 15px;
+                margin: 10px;
+            }
+            .image-gallery {
+                padding-right: 0;
+                margin-bottom: 20px;
+            }
+            .product-info-detail {
+                padding-left: 0;
+            }
+            .product-info-detail h2 {
+                font-size: 1.8em;
+            }
+        }
